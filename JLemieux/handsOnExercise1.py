@@ -1,5 +1,3 @@
-fruit_list = ['apples', 'oranges', 'bananas']
-
 def print_list_values(fruit_list):
     for item in fruit_list:
         print(item)
@@ -11,6 +9,8 @@ def add_to_list(fruit_list):
 def combine_list_elements(fruit_list):
     combined_string = ' '.join(fruit_list)
     return combined_string
+
+fruit_list = ['apples', 'oranges', 'bananas']
 
 # Step 1
 print("Step 1:")
