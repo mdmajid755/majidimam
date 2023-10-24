@@ -1,13 +1,16 @@
-#Random number generator
-import random
+#Import die
+from die import Die
 
 #Rolling 2 dice and returning values 1 through 6
-def roll_dice():
-    return random.randint(1, 6), random.randint(1, 6)
+def roll_dice(die1, die2):
+    return die1.roll(), die2.roll()
 
 #The game
 def play_game():
     points = 100
+    die1 = Die(6)
+    die2 = Die(6)
+
     while points > 0 and points < 1000:
         print("Lemieux's High Rolling 7/11 Casino")
         print(f'Points: {points}')
@@ -26,7 +29,7 @@ def play_game():
             continue
         
         #The two numbers from randomization become both dice rolls
-        dice1, dice2 = roll_dice()
+        dice1, dice2 = roll_dice(die1, die2)
         #Total adds both rolls
         total = dice1 + dice2
         print(f'\nDice rolls: {dice1}, {dice2}\n')

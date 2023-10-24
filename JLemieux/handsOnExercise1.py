@@ -1,13 +1,13 @@
-def print_list_values(fruit_list):
-    for item in fruit_list:
+def print_list_values(list):
+    for item in list:
         print(item)
 
-def add_to_list(fruit_list):
-    fruit_list.append("the function added this")
-    return fruit_list
+def add_to_list(list):
+    list.append("the function added this")
+    return list
 
-def combine_list_elements(fruit_list):
-    combined_string = ' '.join(fruit_list)
+def combine_list_elements(list):
+    combined_string = ' '.join(list)
     return combined_string
 
 fruit_list = ['apples', 'oranges', 'bananas']

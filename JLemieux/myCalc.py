@@ -16,9 +16,9 @@ def div(x, y):
 
 #Calculator
 def calculate():
-    #Variables for the last result and a list of all running operations
+    #Variables for the last result and a tuple of all running operations
     last_result = None
-    operations = []
+    operations = ()
 
     #If last result is 0
     while True:
@@ -33,7 +33,7 @@ def calculate():
         #Resets operations list and clears last result value
         elif user_input == "reset":
             last_result = None
-            operations = []
+            operations = ()
         #Prints all operations
         elif user_input == "print":
             if operations:
@@ -74,7 +74,7 @@ def calculate():
                         print("Invalid operation.")
 
                     #Adds operation and result to operations list
-                    operations.append(f"{user_input} = {last_result}")
+                    operations += (f"{user_input} = {last_result}",)
 
                 else:
                 #First input must be full operation, like 2 + 2. Assumes last result is 0.
@@ -108,7 +108,7 @@ def calculate():
                         print("Invalid operation.")
 
                     #Adds operations and result to operations list
-                    operations.append(f"{user_input} = {last_result}")
+                    operations += (f"{user_input} = {last_result}",)
 
             except ValueError as e:
                 print(str(e))
