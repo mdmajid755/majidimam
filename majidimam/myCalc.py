@@ -3,7 +3,7 @@ while True:
         operator = input("Press any digit to continue or 'exit' to stop : ")
 
         if operator == "exit":
-                print("Thank you for using this Calculator!")
+                print("Thank you for using this Calculator !")
                 break
         else:
                 # Python program for simple calculator
