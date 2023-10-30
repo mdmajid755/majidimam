@@ -1,0 +1,5 @@
+.gitconfig
+.DS_Store
+.vscode
+.pytest_cache
+__pycache__
