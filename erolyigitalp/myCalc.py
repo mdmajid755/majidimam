@@ -15,7 +15,7 @@ def div(x, y):
     return x / y
 
 # Create 'operations' list
-operations = []
+operations = ()
 
 while True: # First loop - program starting
 
@@ -38,13 +38,13 @@ while True: # First loop - program starting
         print(operations)
         continue
     if firstNumber == "R": # If user wants to reset calculator
-        operations.clear()
+        operations = ()
         continue
     if firstNumber == "Q": # If user wants to exit before enter first number
         print("Exiting...")
         break # Break the first loop
     firstNumber = float(firstNumber) # Convert first number to float
-    operations.append(firstNumber) # Adding first number to operations
+    operations += (firstNumber,) # Adding first number to operations
 
     while True: # Second loop - running while making operation on result
 
@@ -61,18 +61,18 @@ while True: # First loop - program starting
         print("'Q' to exit")
         operation = input(": ") # Taking operation
         if operation == "C": # If user wants start again with protect previous operations
-            operations.append("CLEARED")
+            operations += ("CLEARED",)
             break
         if operation == "P": # If user wants to see previous operations
             print(operations)
             continue
         if operation == "R": # If user wants to reset calculator
-            operations.clear()
+            operations = ()
             break # Break second loop
         if operation == "Q": # If user wants to exit before enter operation
             print("Exiting...")
             break # Break second loop
-        operations.append(operation) # Adding operation to operations
+        operations += (operation,) # Adding operation to operations
 
         # Taking second number
         print("---")
@@ -82,16 +82,16 @@ while True: # First loop - program starting
         print("Enter second number")
         secondNumber = input(": ") # Taking second number
         if secondNumber == "C": # If user wants start again with protect previous operations
-            operations.append("CLEARED")
+            operations += ("CLEARED",)
             break
         if secondNumber == "R": # If user wants to reset calculator
-            operations.clear()
+            operations = ()
             break # Break second loop
         if secondNumber == "Q": # If user wants to exit before enter second number
             print("Exiting...")
             break # Break second loop
         secondNumber = float(secondNumber) # Convert second number to operations
-        operations.append(secondNumber) # Adding second number to operations
+        operations += (secondNumber,) # Adding second number to operations
 
         # Operations
         if operation == '+' or operation == 'add': # Add operation
@@ -108,8 +108,7 @@ while True: # First loop - program starting
             result = div(firstNumber, secondNumber)
 
         # Printing Result
-        operations.append("=") # Adding = sign to operations
-        operations.append(result) # Adding result to operations
+        operations += ("=", result) # Adding = sign to operations / Adding result to operations
         firstNumber = result # Making first number equal to result for use again
         print("---")
         print("Result:", result) # Printing result

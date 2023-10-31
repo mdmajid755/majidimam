@@ -7,7 +7,7 @@ def add_list_item(list, item_to_add):
     return list
 
 def combine_list_items(list):
-    return ''.join(list)
+    return ' '.join(list)
 
 test_list = ['test1','test2','test3']
 print_list(test_list)

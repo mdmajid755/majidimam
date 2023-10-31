@@ -1,55 +1,51 @@
-# This function adds two numbers
-def add(x, y):
-    return x + y
-
-# This function subtracts two numbers
-def subtract(x, y):
-    return x - y
-
-# This function multiplies two numbers
-def multiply(x, y):
-    return x * y
-
-# This function divides two numbers
-def divide(x, y):
-    return x / y
-
-
-print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
-
-while True:
-    # take input from the user
-    choice = input("Enter choice(1/2/3/4): ")
-
-    # check if choice is one of the four options
-    if choice in ('1', '2', '3', '4'):
+#Data validation
+def get_number(prompt):
+    while True:
         try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            return float(input(prompt))
         except ValueError:
             print("Invalid input. Please enter a number.")
-            continue
+            
+def get_op(prompt):
+    while True:
+        op = input(prompt)
+        if len(op) == 1 and op in "+-*/":
+            return op
+        print("Invalid operator. Please enter +, -, *, or /")
 
-        if choice == '1':
-            print(num1, "+", num2, "=", add(num1, num2))
+#Calculator heading            
+print("Python Calculator")
 
-        elif choice == '2':
-            print(num1, "-", num2, "=", subtract(num1, num2))
+#Get input from user for calculation
+def calculate():
+    num1 = get_number("Enter first number: ")
+    op = get_op("Enter operator (+, -, *, /): ")
+    num2 = get_number("Enter second number: ")
+    if op == '+':
+        print(num1, "+", num2, "=", (num1 + num2))
 
-        elif choice == '3':
-            print(num1, "*", num2, "=", multiply(num1, num2))
+    elif op == '-':
+        print(num1, "-", num2, "=", (num1 - num2))
 
-        elif choice == '4':
-            print(num1, "/", num2, "=", divide(num1, num2))
-        
-        # check if user wants another calculation
-        # break the while loop if answer is no
-        next_calculation = input("Do you want to math some more? Enter Y or N")
-        if next_calculation == "N":
-          break
+    elif op == '*':
+        print(num1, "*", num2, "=", (num1 * num2))
+
+    elif op == '/':
+        try:
+            print(num1, "/", num2, "=", (num1 / num2))
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
+    loop() 
+    
+# check if user wants another calculation
+def loop():
+    choice = input("Do you want to math some more? (Y,N): ")
+    if choice.upper() == "Y":
+        calculate()
+    elif choice.upper() == "N":
+        print("Goodbye!")
     else:
-        print("Invalid Input")
+        print("Invalid input!")
+        loop()
+
+calculate()

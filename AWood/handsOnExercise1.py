@@ -1,23 +1,20 @@
-def print_list(items):
+def print_lst(items):
     for item in items:
         print(item)
 
-def add_to_list(lst):
-    lst.append("the function added this")
-    return lst
+def add_item(my_lst):
+    my_lst.append("the function added this")
+    return my_lst
+    
+def combine_lst_elements(my_lst):
+    my_string = "".join(my_lst)
+    return my_string
 
-def combine_list_elements(lst):
-    return ''.join(lst)
+fruits = ["apple", "orange", "bananas"]
 
-def my_function(*args):
-    for arg in args:
-        print(arg)
+print_lst(fruits)
 
-fruits = ["apple", "oranges", "bananas"]
+print(add_item(fruits, "the function added this"))
 
-print(fruits[0]) # Output: apple
-print(fruits[1]) # Output: oranges
-print(fruits[2]) # Output: bananas
+print(combine_lst_elements(fruits))
 
-result = my_function
-print(result)
