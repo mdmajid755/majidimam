@@ -210,6 +210,3 @@ while True:
                 print("Current result : ", result2)
                 my_object.reset()
                 print("After Reset, Current Value : ",my_object.current_value)
-
-
-
