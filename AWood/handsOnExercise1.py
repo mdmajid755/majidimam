@@ -12,10 +12,9 @@ def combine_lst_elements(my_lst):
 
 fruits = ["apple", "orange", "bananas"]
 
-def fruits():
-    return "apple, orange, bananas"
+print_lst(fruits)
 
-fruit_lst = fruits()
-print(fruit_lst)
+print(add_item(fruits, "the function added this"))
 
-print(fruits())
+print(combine_lst_elements(fruits))
+
