@@ -18,19 +18,18 @@ class Player:
 
 class Dice:
     def roll(self):
-        return random.randint(1, 6) + random.randint(1, 6)
+        return random.randint(1, 6)
 
 
 class Roll:
     wager = None
-    dice = Dice()
     has_won = False
 
     def set_wager(self, wager):
         self.wager = wager
 
     def roll(self):
-        dice_roll = self.dice.roll()
+        dice_roll = Dice().roll() + Dice().roll()
         print("You rolled " + str(dice_roll) + " points")
         if dice_roll == 7 or dice_roll == 11:
             print("You won to roll!")
