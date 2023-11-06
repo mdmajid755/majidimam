@@ -1,51 +1,42 @@
-#Data validation
-def get_number(prompt):
-    while True:
-        try:
-            return float(input(prompt))
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-            
-def get_op(prompt):
-    while True:
-        op = input(prompt)
-        if len(op) == 1 and op in "+-*/":
-            return op
-        print("Invalid operator. Please enter +, -, *, or /")
-
 #Calculator heading            
 print("Python Calculator")
 
-#Get input from user for calculation
+# Declare an empty dictionary to store the results of each calculation
+results = {}
+
+# Define a function to perform the calculation and save the result
 def calculate():
-    num1 = get_number("Enter first number: ")
-    op = get_op("Enter operator (+, -, *, /): ")
-    num2 = get_number("Enter second number: ")
-    if op == '+':
-        print(num1, "+", num2, "=", (num1 + num2))
-
-    elif op == '-':
-        print(num1, "-", num2, "=", (num1 - num2))
-
-    elif op == '*':
-        print(num1, "*", num2, "=", (num1 * num2))
-
-    elif op == '/':
-        try:
-            print(num1, "/", num2, "=", (num1 / num2))
-        except ZeroDivisionError:
-            print("Cannot divide by zero")
-    loop() 
+    # Get the user input for the calculation
+    calculation = input("Enter a calculation: ")
     
-# check if user wants another calculation
-def loop():
-    choice = input("Do you want to math some more? (Y,N): ")
-    if choice.upper() == "Y":
-        calculate()
-    elif choice.upper() == "N":
-        print("Goodbye!")
-    else:
-        print("Invalid input!")
-        loop()
+    # Perform the calculation and save the result
+    result = eval(calculation)
+    results[calculation] = result
+    
+    # Print the result
+    print(result)
+    
+    # Return the result
+    return result
 
-calculate()
+# Loop through the calculator until the user quits
+while True:
+    # Get the user input for what they want to do
+    action = input("Enter 'c' to calculate, 'h' to view history, or 'q' to quit: ")
+    
+    # If they want to calculate, call the calculate function
+    if action == 'c':
+        calculate()
+    
+    # If they want to view results, print out all of the previous calculations and their results
+    elif action == 'h':
+        for calculation, result in results.items():
+            print(f"{calculation} = {result}")
+    
+    # If they want to quit, break out of the loop
+    elif action == 'q':
+        break
+    
+    # If they enter an invalid option, tell them and ask again
+    else:
+        print("Invalid option. Please try again.")
