@@ -1,35 +1,39 @@
 import random
 
-# change
-
 def roll_dice():
     return random.randint(1, 6) + random.randint(1, 6)
 
-def play_game(points):
-    while points > 0:
-        print(f"Your current points: {points}")
-        wager = int(input("Enter your wager (1 to 100, or 0 to quit): "))
+def main():
+    player_points = 500 # Starting points for the player
 
-        if wager < 0 or wager > points:
-            print("Invalid wager. Please bet between 1 and your current points.")
-            continue
-
-        if wager == 0:
+    while player_points > 0 and player_points < 1000:
+        print(f"You have {player_points} points.")
+        
+        wager = input("Enter your wager (1 to your points or 'exit' to quit): ")
+        
+        if wager.lower() == 'exit':
             break
+        
+        wager = int(wager)
+        
+        if wager < 1 or wager > player_points:
+            print("Invalid wager. Please enter a valid wager.")
+            continue
+        
+        roll = roll_dice()
+        print(f"You rolled a {roll}")
+        
+        if roll in (7, 11):
+            player_points += wager
+            print(f"You win! You now have {player_points} points.")
+        elif roll in (2, 3, 12):
+            player_points -= wager
+            print(f"You lose! You now have {player_points} points.")
+    
+    if player_points >= 1000:
+        print("Congratulations! You've won the game!")
+    else:
+        print("Sorry, you've lost the game!")
 
-        dice_sum = roll_dice()
-        print(f"Dice roll result: {dice_sum}")
-
-        if dice_sum <= 7:
-            print(" ")
-            points -= wager
-        else:
-            print("You win!")
-            points += wager
-
-    print(f"Game over. Your final score: {points}")
-
-if __name__ == "__main__":
-    initial_points = 100
-    print("Welcome to the Dice Game!")
-    play_game(initial_points)
+if __name__ == "__main":
+    main()
