@@ -2,6 +2,10 @@ def print_list(items):
     for item in items:
         print(item)
 
+def add_item_to_list(string):
+    string.append("the function added this")
+    return list
+
 def add_list_item(list, item_to_add):
     list.append(item_to_add)
     return list
@@ -23,3 +27,5 @@ print_list(test_fruits_list)
 print(add_list_item(test_fruits_list, "the function added this"))
 
 print(combine_list_items(test_fruits_list))
+
+print(add_item_to_list(test_fruits_list))
