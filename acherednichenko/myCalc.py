@@ -71,7 +71,7 @@ while True:
             if operation_symbol == "-" or operation_word == "sub":
                 result = subtract(int(first_number), int(second_number))
             last_result = result
-            operations.append(str(first_number) + operation + str(second_number) + "=" + str(result))
+            operations.append(str(first_number) + operation_symbol + str(second_number) + "=" + str(result))
             print(result)
         except ZeroDivisionError:
             print("Division by zero is not allowed")
