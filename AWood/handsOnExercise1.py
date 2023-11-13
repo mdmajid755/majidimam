@@ -14,7 +14,9 @@ fruits = ["apple", "orange", "bananas"]
 
 print_lst(fruits)
 
-print(add_item(fruits, "the function added this"))
+
+print(add_item(fruits))
+
 
 print(combine_lst_elements(fruits))
 
