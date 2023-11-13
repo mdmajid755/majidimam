@@ -25,46 +25,31 @@ while True:
                         if num2==0:
                                 return "Cannot divide by Zero"
                         return num1 / num2
-
-                print("Please select operation -\n" \
-		"1. Add (+)\n" \
-		"2. Subtract (-)\n" \
-		"3. Multiply (*)\n" \
-		"4. Divide (\)\n")
-
-
                 # Take input from the user
-                select = int(input("Select operations form 1, 2, 3 and 4 :  "))
-
-                if select == 1 :
-                                
-                            number_1=int(input("Enter first number  :  "))
-                            number_2 = int(input("Enter second number:  "))
+                number_1= int(input())
+                select1= input()
+                if select1 =='+' :
+                            number_2 = int(input())
                             result = add(number_1, number_2)
                             print(number_1, "+", number_2, "=", result)
-                            print("Select next operation -\n" \
-		                        "1. Add\n" \
-		                        "2. Subtract\n" \
-                                        "3. Multiply\n" \
-		                        "4. Divide\n")
-                            select = int(input("Select operations form 1, 2, 3, 4 :  "))
-                            if select == 1:
-                                        number_3 = int(input("Enter any number: "))
+                            select2 =input()
+                            if select2 =='+':
+                                        number_3 = int(input())
                                         result2=add(result, number_3)
                                         print(result, "+", number_3, "=", result2 )
 
-                            elif select == 2:
-                                        number_3 = int(input("Enter any number: "))
+                            elif select2 =='-':
+                                        number_3 = int(input())
                                         result2 = subtract(result, number_3)
                                         print(result, "-", number_3, "=", result2 )
 
-                            elif select == 3:
-                                         number_3 = int(input("Enter any number: "))
+                            elif select2 =='*':
+                                         number_3 = int(input())
                                          result2=multiply(result, number_3)
                                          print(result, "*", number_3, "=", result2)
 
-                            elif select == 4:
-                                         number_3 = int(input("Enter any number: "))
+                            elif select2 =='/':
+                                         number_3 = int(input())
                                          if number_3==0:
                                                       print(" Number not define")
                                          else : 
@@ -74,39 +59,31 @@ while True:
                                          print("Invalid input")
 
 
-                elif select == 2:
+                elif select1 =='-':
 
-                            number_1 = int(input("Enter first number: "))
-                            number_2 = int(input("Enter second number: "))
-
+                            number_2 = int(input())
                             result = subtract(number_1, number_2)
                             print(number_1, "-", number_2, "=", result)
-                            print("Select next operation -\n" \
-		                        "1. Add\n" \
-		                        "2. Subtract\n" \
-		                        "3. Multiply\n" \
-		                        "4. Divide\n")
-                            select = int(input("Select operations form 1, 2, 3, 4 :  "))
-                            if select == 1:
-                                    number_3 = int(input("Enter any number: "))
+                            select2 = input()
+                            if select2 =='+':
+                                    number_3 = int(input())
                                     result2= add(result, number_3)
                                     print(result, "+", number_3, "=", result2)
 
-                            elif select == 2:
-
-                                    number_3 = int(input("Enter any number: "))
+                            elif select2 =='-':
+                                    number_3 = int(input())
                                     result2=subtract(result, number_3)
                                     print(result, "-", number_3, "=", result2)
 
-                            elif select == 3:
+                            elif select2 == '*':
 
-                                     number_3 = int(input("Enter any number: "))
+                                     number_3 = int(input())
                                      result2=multiply(result, number_3)
                                      print(result, "*", number_3, "=", result2 )
 
-                            elif select == 4:
+                            elif select2 == '/':
 
-                                     number_3 = int(input("Enter any number: "))
+                                     number_3 = int(input())
                                      if number_3==0:
                                               print(" Number not define")
                                      else :
@@ -117,38 +94,32 @@ while True:
                                      print("Invalid input")
 
 
-                elif select == 3:
+                elif select1 =='*':
 
-                            number_1 = int(input("Enter first number: "))
-                            number_2 = int(input("Enter second number: "))
+                            number_2 = int(input())
                             result = multiply(number_1, number_2)
                             print(number_1, "*", number_2, "=", result)
-                            print("Select next operation -\n" \
-		                        "1. Add\n" \
-		                        "2. Subtract\n" \
-		                        "3. Multiply\n" \
-		                        "4. Divide\n")
-                            select = int(input("Select operations form 1, 2, 3, 4 :  "))
-                            if select == 1:
-                                        number_3 = int(input("Enter any number: "))
+                            select2 =input()
+                            if select2 =='+':
+                                        number_3 = int(input())
                                         result2=add(result, number_3)
                                         print(result, "+", number_3, "=", result2)
 
-                            elif select == 2:
+                            elif select2 =='-':
 
-                                        number_3 = int(input("Enter any number: "))
+                                        number_3 = int(input())
                                         result2=subtract(result, number_3)
                                         print(result, "-", number_3, "=", result2)
 
-                            elif select == 3:
+                            elif select2 =='*':
 
-                                         number_3 = int(input("Enter any number: "))
+                                         number_3 = int(input())
                                          result2=multiply(result, number_3)
                                          print(result, "*", number_3, "=", result2)
 
-                            elif select == 4:
+                            elif select2 =='/':
 
-                                          number_3 = int(input("Enter any number: "))
+                                          number_3 = int(input())
                                           if number_3==0:
                                                       print(" Number not define")
                                           else :
@@ -158,38 +129,31 @@ while True:
                                          print("Invalid input")
 
 
-                elif select == 4:
-
-                            number_1 = int(input("Enter first number: "))
-                            number_2 = int(input("Enter second number: "))
+                elif select1 =='/':
+                            number_2 = int(input())
                             result = divide(number_1, number_2)
                             print(number_1, "/", number_2, "=", result)
-                            print("Select next operation -\n" \
-		                        "1. Add\n" \
-		                        "2. Subtract\n" \
-		                        "3. Multiply\n" \
-		                        "4. Divide\n")
-                            select = int(input("Select operations form 1, 2, 3, 4 :  "))
-                            if select == 1:
-                                        number_3 = int(input("Enter any number: "))
+                            select2 = input()
+                            if select2 == '+':
+                                        number_3 = int(input())
                                         result2 =  add(result, number_3)
                                         print(result, "+", number_3, "=", result2)
 
-                            elif select == 2:
+                            elif select2 == '-':
 
-                                        number_3 = int(input("Enter any number: "))
+                                        number_3 = int(input())
                                         result2= subtract(result, number_3)
                                         print(result, "-", number_3, "=", result2)
 
-                            elif select == 3:
+                            elif select2 == '*':
 
-                                         number_3 = int(input("Enter any number: "))
+                                         number_3 = int(input())
                                          result2 = multiply(result, number_3)
                                          print(result, "*", number_3, "=", result2)
 
-                            elif select == 4:
+                            elif select2 == '/':
 
-                                         number_3 = int(input("Enter any number: "))
+                                         number_3 = int(input())
                                          if number_3==0:
                                                       print(" Number not define")
                                          else :
@@ -206,7 +170,19 @@ while True:
                                             self.current_value = self.initial_value
                             def reset(self):
                                             self.current_value= self.initial_value
+                action=input("Please type 'Print' to print history and 'Reset' to clear  :")
                 my_object = calculator()
-                print("Current result : ", result2)
-                my_object.reset()
-                print("After Reset, Current Value : ",my_object.current_value)
+                match action:
+                        case 'print':
+                                print(number_1,select1,number_2," = ",result)
+                                print(result,select2,number_3," = ",result2)
+                        case 'reset':
+                                 my_object.reset()
+                                 print("After Reset, Current Value : ",my_object.current_value)
+                        case _:
+                                print("Invalid output")
+                                
+
+                
+                
+               
